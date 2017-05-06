@@ -2,11 +2,15 @@
 
 namespace App\Providers;
 
-use App\Html\TableBuilder;
 use Illuminate\Support\ServiceProvider;
 
 class TableBuilderProvider extends ServiceProvider
 {
+    /**
+     * Indicates if loading of the provider is deferred.
+     *
+     * @var bool
+     */
     protected $defer = true;
     
     /**
@@ -26,8 +30,18 @@ class TableBuilderProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->singleton(TableBuilder::class, function () {
-            return new TableBuilder();
+        $this->app->bind('tableBuilder', function() {
+            return new TableBuilder;
         });
+    }
+    
+    /**
+     * Get the services provided by the provider.
+     *
+     * @return array
+     */
+    public function provides()
+    {
+        return ['tableBuilder'];
     }
 }

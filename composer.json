@@ -1,0 +1,28 @@
+{
+    "name": "hasutesa/tablebuilder",
+    "description": "Fast table builder for laravel",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Samy Otero Glez",
+            "email": "otero.glez.samy@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require-dev": {
+        "phpunit/phpunit": "*",
+        "behat/behat": "^3.3",
+        "behat/mink": "^1.7"
+    },
+    "autoload": {
+        "psr-4": {
+            "Hasutesa\\TableBuilder\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Hasutesa\\TableBuilder\\Tests\\": "test/"
+        }
+    }
+}
